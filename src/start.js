@@ -2,6 +2,7 @@ const electron = require('electron');
 const path = require('path');
 const url = require('url');
 const app = electron.app;
+electron.Menu.setApplicationMenu(false);
 
 let mainWindow;
 
@@ -12,7 +13,6 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    frame: false,
     resizable: false,
   });
 
@@ -28,6 +28,21 @@ function createWindow() {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+  mainWindow.webContents.on(
+    'new-window',
+    (event, url, frameName, disposition, options, additionalFeatures) => {
+      if (frameName === 'modal') {
+        event.preventDefault();
+        Object.assign(options, {
+          modal: true,
+          width: 200,
+          height: 200,
+        });
+        event.newGuest = new electron.BrowserWindow(options);
+      }
+    }
+  );
 
   mainWindow.webContents.openDevTools();
 }

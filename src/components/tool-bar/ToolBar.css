@@ -1,6 +1,20 @@
 .toolbar-layout {
+  --padding: 36px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
   align-items: center;
+}
+
+.settings-icon {
+  width: 29px;
+  height: 29px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.settings-icon:hover {
+  transform: rotate(90deg);
 }

@@ -5,7 +5,9 @@ const App = () => {
   return (
     <div className="flex-grid">
       <ToolBar></ToolBar>
-      <ToolBar></ToolBar>
+      <div className="row"></div>
+      <div className="row"></div>
+      <div className="row"></div>
     </div>
   );
 };
