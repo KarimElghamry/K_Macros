@@ -1,0 +1,57 @@
+.base-slider {
+  position: relative;
+  width: 50px;
+  height: 20px;
+  border-radius: 9px;
+  transition-duration: 0.3s;
+}
+
+.enabled-slider {
+  background-color: #45da2c;
+}
+
+.disabled-slider {
+  background-color: #e72208;
+}
+
+.slider-knob-enabled {
+  position: absolute;
+  left: 27px;
+  width: 23px;
+  height: 20px;
+  border-radius: 9px;
+  background-color: white;
+  animation: slider-knob-enable-anim;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+}
+
+.slider-knob-disabled {
+  position: absolute;
+  left: 0px;
+  width: 23px;
+  height: 20px;
+  border-radius: 9px;
+  background-color: white;
+  animation: slider-knob-disable-anim;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+}
+
+@keyframes slider-knob-enable-anim {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 27px;
+  }
+}
+
+@keyframes slider-knob-disable-anim {
+  from {
+    left: 27px;
+  }
+  to {
+    left: 0px;
+  }
+}

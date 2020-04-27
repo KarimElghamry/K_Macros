@@ -2,3 +2,14 @@ body {
   margin: 0;
   background-color: #2f3136;
 }
+
+.flex-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.row {
+  flex: 1;
+}
