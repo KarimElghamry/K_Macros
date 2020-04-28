@@ -1,11 +1,18 @@
+@font-face {
+  font-family: Quantico;
+  src: url('./assets/fonts/Quantico.otf');
+}
+
 body {
   margin: 0;
   background-color: #2f3136;
+  font-family: 'Quantico';
 }
 
 .flex-grid {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100vw;
   height: 100vh;
 }

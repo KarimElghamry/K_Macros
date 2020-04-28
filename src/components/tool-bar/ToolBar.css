@@ -1,6 +1,7 @@
 .toolbar-layout {
   --padding: 36px;
   display: flex;
+  width: calc(100% - 72px);
   flex-direction: row;
   justify-content: space-between;
   padding-left: var(--padding);

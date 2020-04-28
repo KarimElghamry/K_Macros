@@ -1,0 +1,78 @@
+.menu-layout {
+  width: 45%;
+  height: 300px;
+  flex: 3;
+}
+
+.card-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 233px;
+  height: 52px;
+  border-radius: 7px;
+  background-color: #444549;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 2px;
+  user-select: none;
+}
+
+.keyboard-key-icon {
+  width: 48px;
+  height: 35px;
+  border-radius: 4px;
+  box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.key-label {
+  margin-left: -29px;
+  margin-bottom: 4px;
+  width: 26px;
+  font-size: 20px;
+  font-weight: bolder;
+  user-select: none;
+}
+
+.arrow-separator {
+  width: 16px;
+  height: 16px;
+  border-style: solid;
+  border-width: 8px 0px 8px 16px;
+  box-sizing: border-box;
+  border-color: transparent transparent transparent white;
+}
+
+.delete-macro-button {
+  margin-left: 10px;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  background-color: #ff0000;
+  color: white;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.delete-macro-button::after {
+  position: absolute;
+  content: '';
+  height: 17px;
+  border-left: 2px solid #fff;
+  transform: rotate(45deg);
+  left: 11px;
+  top: 4px;
+}
+
+.delete-macro-button::before {
+  position: absolute;
+  content: '';
+  height: 17px;
+  border-left: 2px solid #fff;
+  transform: rotate(-45deg);
+  left: 11px;
+  top: 4px;
+}

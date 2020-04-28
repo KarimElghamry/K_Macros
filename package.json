@@ -16,7 +16,9 @@
     "eslint-plugin-react": "^7.19.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "simplebar-react": "^2.1.0",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "nf start -p 3000",
