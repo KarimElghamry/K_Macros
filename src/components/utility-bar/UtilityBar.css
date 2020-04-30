@@ -1,0 +1,40 @@
+.utlilty-bar-layout {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.add-button {
+  margin-right: 20px;
+  width: 85px;
+  height: 40px;
+  border-radius: 14px;
+  background-color: #45da2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  box-shadow: inset 0px 16px 6px rgba(255, 255, 255, 0.25);
+  user-select: none;
+  cursor: pointer;
+}
+
+.exit-button {
+  margin-right: 30px;
+  width: 85px;
+  height: 40px;
+  border-radius: 14px;
+  background-color: #e72208;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  box-shadow: inset 0px 16px 6px rgba(255, 255, 255, 0.25);
+  user-select: none;
+  cursor: pointer;
+}

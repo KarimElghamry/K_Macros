@@ -1,0 +1,23 @@
+.frame-bar-layout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #212226;
+  height: 25px;
+  width: clac(100vw - 15px);
+  padding-right: 15px;
+  -webkit-app-region: drag;
+}
+
+.circle-button {
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  margin: 5px;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.circle-button:hover {
+  filter: brightness(75%);
+}

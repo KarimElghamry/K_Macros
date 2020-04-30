@@ -1,11 +1,11 @@
 .menu-layout {
   width: 45%;
   height: 300px;
-  flex: 3;
+  flex: 4;
 }
 
 .card-container {
-  margin-top: 10px;
+  margin-top: 11px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-evenly;

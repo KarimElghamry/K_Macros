@@ -20,3 +20,12 @@ body {
 .row {
   flex: 1;
 }
+
+@keyframes opacity-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

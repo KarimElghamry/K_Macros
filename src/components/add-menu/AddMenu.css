@@ -1,0 +1,16 @@
+.add-menu-layout {
+  height: calc(100vh - 30px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: opacity-anim;
+  animation-duration: 1s;
+}
+
+input {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  margin: 13px;
+}

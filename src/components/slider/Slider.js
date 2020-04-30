@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Slider.css';
 
+const ipcRenderer = window.require('electron').ipcRenderer;
+
 const Slider = (props) => {
-  const [enabled, setEnabled] = useState(true);
+  const enabled = props.config.isEnabled;
+
   const handleClick = () => {
-    setEnabled(!enabled);
+    let newConfig = Object.assign({}, props.config);
+    newConfig.isEnabled = !enabled;
+
+    ipcRenderer.send('set-config', newConfig);
+    props.setConfig(newConfig);
   };
 
   return (

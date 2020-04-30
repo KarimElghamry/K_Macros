@@ -1,7 +1,21 @@
 import React from 'react';
 import './MacrosMenu.css';
 
-const MacroCard = props => {
+const ipcRenderer = window.require('electron').ipcRenderer;
+
+const MacroCard = (props) => {
+  const config = props.config;
+
+  const handleDelete = () => {
+    let newConfig = Object.assign({}, config);
+    const currentMapping = config.keyMapping[props.firstKey];
+    const newMapping = currentMapping.filter((v) => v !== props.secondKey);
+    newConfig.keyMapping[props.firstKey] = newMapping;
+
+    ipcRenderer.send('set-config', newConfig);
+    props.setConfig(newConfig);
+  };
+
   return (
     <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
       <div className="card-container">
@@ -14,7 +28,7 @@ const MacroCard = props => {
         >
           <img
             alt=""
-            src={require ('../../assets/images/keyboard-key.png')}
+            src={require('../../assets/images/keyboard-key.png')}
             className="keyboard-key-icon"
           />
           <div className="key-label">{props.firstKey}</div>
@@ -31,13 +45,13 @@ const MacroCard = props => {
         >
           <img
             alt=""
-            src={require ('../../assets/images/keyboard-key.png')}
+            src={require('../../assets/images/keyboard-key.png')}
             className="keyboard-key-icon"
           />
           <div className="key-label">{props.secondKey}</div>
         </div>
 
-        <div className="delete-macro-button" />
+        <div className="delete-macro-button" onClick={() => handleDelete()} />
       </div>
     </div>
   );

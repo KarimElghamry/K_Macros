@@ -3,24 +3,9 @@ import Slider from '../slider/Slider';
 import './ToolBar.css';
 
 const remote = window.require('electron').remote;
-let settingsWindow;
 
 const ToolBar = (props) => {
-  const handleSettingsClick = () => {
-    if (settingsWindow) {
-      settingsWindow.focus();
-      return;
-    }
-
-    settingsWindow = new remote.BrowserWindow({
-      width: 200,
-      height: 200,
-    });
-
-    settingsWindow.on('closed', () => {
-      settingsWindow = null;
-    });
-  };
+  const handleSettingsClick = () => {};
 
   return (
     <div className="row toolbar-layout">
@@ -30,7 +15,7 @@ const ToolBar = (props) => {
         src={require('../../assets/images/settings.jpg')}
         onClick={() => handleSettingsClick()}
       ></img>
-      <Slider></Slider>
+      <Slider {...props}></Slider>
     </div>
   );
 };
