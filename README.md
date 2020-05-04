@@ -25,9 +25,7 @@ A simple keyboard macros desktop app made with React and Electron.
 
 ## Screenshots
 
-<img src="./repo_imgs/home.png" width="600"> 
-<img src="./repo_imgs/settings.png" width="600"> 
-<img src="./repo_imgs/add.png" width="600">
+<img src="./repo_imgs/home.png" width="400"> <img src="./repo_imgs/settings.png" width="400"> <img src="./repo_imgs/add.png" width="400"> <img src="./repo_imgs/error.PNG" width="400">
 
 ## Future Work
 
