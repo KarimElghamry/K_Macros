@@ -34,4 +34,6 @@ A simple keyboard macros desktop app made with React and Electron.
 
 - Use `Robotjs` package instead of the currently used one.
 
+- Remove the 100ms introduced delay.
+
 - Add more settings and suggested options.
