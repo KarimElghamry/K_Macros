@@ -34,8 +34,12 @@ ipcMain.on('set-config', (event, args) => {
   config = args;
   let content = JSON.stringify(config);
   fs.writeFileSync('config.json', content, (err) => {
-    if (err) console.log(err);
+    if (err) {
+      event.returnValue = false;
+      return;
+    }
   });
+  event.returnValue = true;
 });
 
 //keyboard events listeners
@@ -73,11 +77,13 @@ function createWindow() {
 
   //TODO::BUILD
   mainWindow.loadURL(
-    url.format({
-      pathname: path.join(__dirname, '/../build/index.html'),
-      protocol: 'file',
-      slashes: true,
-    })
+    process.env.IS_DEV
+      ? 'http://localhost:3000'
+      : url.format({
+          pathname: path.join(__dirname, '/../build/index.html'),
+          protocol: 'file',
+          slashes: true,
+        })
   );
 
   mainWindow.on('closed', () => {
@@ -99,7 +105,7 @@ function createWindow() {
     }
   );
 
-  mainWindow.webContents.openDevTools();
+  if (process.env.IS_DEV) mainWindow.webContents.openDevTools();
 }
 
 app.on('ready', createWindow);

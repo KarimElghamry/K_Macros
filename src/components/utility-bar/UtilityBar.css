@@ -17,9 +17,10 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 18px;
+  font-size: 17px;
   box-shadow: inset 0px 16px 6px rgba(255, 255, 255, 0.25);
   user-select: none;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -37,4 +38,13 @@
   box-shadow: inset 0px 16px 6px rgba(255, 255, 255, 0.25);
   user-select: none;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-button:hover {
+  filter: brightness(130%);
+}
+
+.exit-button:hover {
+  filter: brightness(130%);
 }

@@ -2,15 +2,34 @@
   height: calc(100vh - 30px);
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   animation: opacity-anim;
   animation-duration: 1s;
 }
 
+.row-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 input {
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  margin-right: 30px;
   text-align: center;
-  margin: 13px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white !important;
+  border-radius: 3px;
+  font-family: 'Quantico' !important;
+  font-size: 30px;
+}
+
+input:focus {
+  outline: none !important;
 }

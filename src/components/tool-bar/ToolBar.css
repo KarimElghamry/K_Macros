@@ -7,6 +7,16 @@
   padding-left: var(--padding);
   padding-right: var(--padding);
   align-items: center;
+  color: white;
+  font-size: 20px;
+}
+
+.toolbar-title-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 170px;
+  padding-left: 8px;
 }
 
 .settings-icon {

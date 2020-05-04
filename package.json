@@ -3,18 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
-  "main": "src/start.js",
+  "main": "public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "electron": "^8.2.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "iohook": "^0.6.5",
+    "node-key-sender": "^1.0.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
@@ -26,22 +26,32 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "electron": "electron .",
+    "electron": "set IS_DEV=true && electron .",
     "electron-start": "node src/start-react",
     "react-start": "react-scripts start",
     "pack": "build --dir",
     "dist": "npm run build && build",
-    "postinstall": "install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "electron-builder -w"
+  },
+  "author": {
+    "name": "Karim Elghamry",
+    "email": "Karimelghamry@gmail.com",
+    "url": "https://your-website.com"
   },
   "build": {
-    "appId": "com.electron.electron-with-create-react-app",
-    "win": {
-      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
-    },
-    "directories": {
-      "buildResources": "public"
-    }
+    "appId": "com.my-website.my-app",
+    "productName": "Macros",
+    "copyright": "Copyright © 2020 ${author}",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "npmRebuild": false,
+    "asar": false
   },
+  "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -58,8 +68,8 @@
     ]
   },
   "devDependencies": {
-    "electron-builder": "^22.5.1",
-    "node-key-sender": "^1.0.11"
+    "electron": "^8.2.3",
+    "electron-builder": "^22.6.0"
   },
   "iohook": {
     "targets": [

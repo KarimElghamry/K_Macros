@@ -4,6 +4,7 @@ import MacrosMenu from './components/macros-menu/MacrosMenu';
 import Utilitybar from './components/utility-bar/UtilityBar';
 import AddMenu from './components/add-menu/AddMenu';
 import FrameBar from './components/frame-bar/FrameBar';
+import SettingsMenu from './components/settings-menu/SettingsMenu';
 
 const ipcRenderer = window.require('electron').ipcRenderer;
 const data = ipcRenderer.sendSync('get-config', '');
@@ -23,7 +24,11 @@ const App = () => {
           height: 'calc(100vh - 30px)',
         }}
       >
-        <ToolBar config={config} setConfig={setConfig}></ToolBar>
+        <ToolBar
+          config={config}
+          setConfig={setConfig}
+          setView={setView}
+        ></ToolBar>
         <MacrosMenu config={config} setConfig={setConfig}></MacrosMenu>
         <Utilitybar setView={setView}></Utilitybar>
       </div>
@@ -35,6 +40,14 @@ const App = () => {
         config={config}
         setConfig={setConfig}
       ></AddMenu>
+    );
+  } else if (view === 'settings') {
+    display = (
+      <SettingsMenu
+        setView={setView}
+        config={config}
+        setConfig={setConfig}
+      ></SettingsMenu>
     );
   }
 

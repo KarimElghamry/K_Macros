@@ -12,7 +12,7 @@ const MacroCard = (props) => {
     const newMapping = currentMapping.filter((v) => v !== props.secondKey);
     newConfig.keyMapping[props.firstKey] = newMapping;
 
-    ipcRenderer.send('set-config', newConfig);
+    ipcRenderer.sendSync('set-config', newConfig);
     props.setConfig(newConfig);
   };
 

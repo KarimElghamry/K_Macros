@@ -2,10 +2,10 @@ import React from 'react';
 import Slider from '../slider/Slider';
 import './ToolBar.css';
 
-const remote = window.require('electron').remote;
-
 const ToolBar = (props) => {
-  const handleSettingsClick = () => {};
+  const handleSettingsClick = () => {
+    props.setView('settings');
+  };
 
   return (
     <div className="row toolbar-layout">
@@ -15,6 +15,10 @@ const ToolBar = (props) => {
         src={require('../../assets/images/settings.jpg')}
         onClick={() => handleSettingsClick()}
       ></img>
+      <div className="toolbar-title-layout">
+        <div>KEY</div>
+        <div>MAPPING</div>
+      </div>
       <Slider {...props}></Slider>
     </div>
   );
