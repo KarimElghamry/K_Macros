@@ -1,5 +1,5 @@
 {
-  "name": "poe-macro",
+  "name": "k-macro",
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
@@ -38,12 +38,15 @@
   "author": {
     "name": "Karim Elghamry",
     "email": "Karimelghamry@gmail.com",
-    "url": "https://your-website.com"
+    "url": "https://github.com/KarimElghamry"
   },
   "build": {
-    "appId": "com.my-website.my-app",
-    "productName": "Macros",
+    "appId": "K-Macros",
+    "productName": "K-Macros",
     "copyright": "Copyright © 2020 ${author}",
+    "win": {
+      "icon": "./public/keyboard.png"
+    },
     "files": [
       "build/**/*",
       "node_modules/**/*"
