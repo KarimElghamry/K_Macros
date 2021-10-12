@@ -71,7 +71,7 @@
     ]
   },
   "devDependencies": {
-    "electron": "^8.2.3",
+    "electron": "^11.5.0",
     "electron-builder": "^22.6.0"
   },
   "iohook": {
